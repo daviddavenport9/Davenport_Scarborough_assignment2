@@ -4,7 +4,7 @@
 using namespace std;
 
   ItemType::ItemType(){
-    value = 0;
+    Initialize(0);
   }
 
  Comparison ItemType::CompareTo(ItemType otherItem) const{
