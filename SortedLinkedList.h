@@ -2,19 +2,22 @@
 #include "ItemType.h"
 #ifndef SORTEDLINKEDLIST_H
 #define SORTEDLINKEDLIST_H
-class SortedLikedList{
+using namespace std;
+class SortedLinkedList{
  public:
   SortedLinkedList();
   ~SortedLinkedList();
+  void makeEmpty();
   int getLength() const;
   void insertItem(ItemType item);
   void deleteItem(ItemType item);
   int searchItem(ItemType &item);
   ItemType getNextItem();
   void resetList();
+  bool isFull() const;
  private:
   int length;
   ListNode* head;
   ListNode* currentPos;
-}; // SortedLinkedList                                                                           
+}; // SortedLinkedList
 #endif
