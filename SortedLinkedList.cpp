@@ -27,7 +27,7 @@ bool SortedLinkedList::isFull() const{
     return true;
   } // try
 } // isFull
-int SortedLinkedList::getLength() const(){
+int SortedLinkedList::getLength() const{
   return length;
 } // getLength
 void SortedLinkedList::insertItem(ItemType item){
