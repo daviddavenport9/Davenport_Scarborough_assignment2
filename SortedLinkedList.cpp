@@ -34,7 +34,7 @@ void SortedLinkedList::insertItem(ItemType item){
   if(isFull()){ // if list is full
     cout << "can't add new item; list is full" << endl;
   }else{ // if there is space
-    ListNode *node = new NodeType;
+    ListNode *node = new ListNode;
     ListNode *predLoc = NULL;
     ListNode *location = head;
     node->item = item;
