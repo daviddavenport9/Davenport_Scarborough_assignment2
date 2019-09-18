@@ -4,10 +4,10 @@
 using namespace std;
 
   ItemType::ItemType(){
-    Initialize(0);
+    initialize(0);
   }
 
- Comparison ItemType::CompareTo(ItemType otherItem) const{
+ Comparison ItemType::compareTo(ItemType otherItem) const{
   if (value < otherItem.value){
     return LESS;
     }
@@ -19,10 +19,10 @@ using namespace std;
     }
 }
 
-  void ItemType::Print() const{
+  void ItemType::print() const{
   cout << value << endl;
 }
 
-  void ItemType::Initialize(int number){
+  void ItemType::initialize(int number){
    value = number; 
 }
