@@ -1,5 +1,5 @@
 #include "SortedLinkedList.h"
-int main(){
+
   SortedLinkedList::SortedLinkedList(){
     length = 0;
     head = NULL;
@@ -26,4 +26,4 @@ int main(){
     currentPos = NULL;
     length = 0;
   } // resetList                                                                                 
-} // main                     
+                 
