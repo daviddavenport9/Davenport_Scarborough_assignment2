@@ -7,9 +7,9 @@ class ItemType{
 
 public : 
   ItemType();
-  Comparison CompareTo(ItemType) const;
-  void Print() const;
-  void Initialize(int number);
+  Comparison compareTo(ItemType) const;
+  void print() const;
+  void initialize(int number);
   
 private:
   int value;
