@@ -107,7 +107,7 @@ std::ostream& operator<<(std::ostream& os, const ItemType& item){
 
 void SortedLinkedList::printList(){
     ListNode* temp;
-    for (temp = head; temp != NULL; temp = temp = temp->next){
+    for (temp = head; temp != NULL; temp = temp->next){
       cout << temp->item.getValue() << " ";
     }
 }//printList
