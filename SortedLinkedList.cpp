@@ -71,11 +71,31 @@ void SortedLinkedList::insertItem(ItemType item){
 void SortedLinkedList::deleteItem(ItemType item){
   
 } // deleteItem
+
+bool SortedLinkedList::valueExist(ItemType &item){
+  ListNode *temp = head;
+  while (temp != NULL){
+    if (temp->item.compareTo(item) == EQUAL){
+      return true;
+    }//if
+    temp = temp->next;
+  }//while
+  return false;
+}
+
 int SortedLinkedList::searchItem(ItemType &item){
   int index = 0;
   ListNode *temp = head;
   bool moreToSearch = temp != NULL;
   while(moreToSearch){
+   if(temp->item.compareTo(item) == EQUAL){
+     moreToSearch = false;
+   }
+   else{
+     temp = temp->next;
+     index++;
+   }
+  /*
     if(temp->item.compareTo(item) == LESS){ // keep looking
       temp = temp->next;
       index++;
@@ -85,7 +105,8 @@ int SortedLinkedList::searchItem(ItemType &item){
       index = -1;
       cout << "Item not found" << endl;
       moreToSearch = false;
-    } // if
+    } // else
+    */
   } // while
   return index;
 } // searchItem
@@ -95,7 +116,7 @@ ItemType SortedLinkedList::getNextItem(){
      cout << "List is empty" << endl;
      return currentPos->item;
    }
-  if(currentPos == NULL){ // if at end of list OR new list
+  if(currentPos == NULL){ // assigns current position to head
     currentPos = head;
     cout << currentPos->item.getValue() << " ";
     cout << "" << endl;
@@ -105,7 +126,7 @@ ItemType SortedLinkedList::getNextItem(){
       cout << "The end of the list is reached" << endl;
       return currentPos->item;
     }
-    currentPos = currentPos->next;
+    currentPos = currentPos->next;//iterates through every value
     cout << currentPos->item.getValue() << " ";
     cout << "" << endl;
     return currentPos->item;
@@ -114,7 +135,6 @@ ItemType SortedLinkedList::getNextItem(){
 
 void SortedLinkedList::resetList(){
   currentPos = NULL;
-  length = 0;
 } // resetList
 
 void SortedLinkedList::printList(){
