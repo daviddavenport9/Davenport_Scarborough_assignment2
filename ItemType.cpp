@@ -4,7 +4,7 @@
 using namespace std;
 
   ItemType::ItemType(){
-    initialize(0);
+    
   }
 
  Comparison ItemType::compareTo(ItemType otherItem) const{
@@ -19,8 +19,8 @@ using namespace std;
     }
 }
 
-  void ItemType::print() const{
-  cout << value << endl;
+  int ItemType::getValue() const{
+  return value;
 }
 
   void ItemType::initialize(int number){
