@@ -15,6 +15,7 @@ class SortedLinkedList{
   void makeEmpty();
   void printList();
   bool isFull() const;
+  bool valueExist(ItemType &item);
  private:
   int length;
   ListNode* head;
