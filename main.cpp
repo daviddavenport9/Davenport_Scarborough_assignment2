@@ -56,13 +56,23 @@ if (fs.is_open())
    
    }//else if
    else if (command == 's'){
-   
+   cout << "Enter a value to search: ";
+   int value;
+   cin >> value;
+   item.initialize(value);
+     if (list.valueExist(item)){
+       cout << "Index is " << list.searchItem(item) << endl;
+     }//if
+     else{
+       cout << "Item not found" << endl;
+     }
    }//else if
    else if (command == 'n'){
-    cout << list.getNextItem();
+    list.getNextItem();
    }//else if
    else if (command == 'r'){
-   
+     list.resetList();
+     cout << "Iterator reset" << endl;
    }//else if
    else if (command == 'p'){
      list.printList();
@@ -78,5 +88,6 @@ if (fs.is_open())
      cout << "Quitting program..." << endl;
      exit(0);
    }//else if
- }//while    
+ }//while 
+ return 0;   
 }//main     
