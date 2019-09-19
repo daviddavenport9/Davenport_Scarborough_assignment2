@@ -91,6 +91,10 @@ int SortedLinkedList::searchItem(ItemType &item){
 } // searchItem
 
 ItemType SortedLinkedList::getNextItem(){
+   if (length == 0){
+     cout << "List is empty" << endl;
+     return currentPos->item;
+   }
   if(currentPos == NULL){ // if at end of list OR new list
     currentPos = head;
     cout << currentPos->item.getValue() << " ";
