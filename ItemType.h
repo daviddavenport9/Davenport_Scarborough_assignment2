@@ -8,8 +8,9 @@ class ItemType{
 public : 
   ItemType();
   Comparison compareTo(ItemType) const;
-  void print() const;
+  int getValue() const;
   void initialize(int number);
+  
   
 private:
   int value;
