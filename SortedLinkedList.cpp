@@ -5,9 +5,11 @@ SortedLinkedList::SortedLinkedList(){
     length = 0;
     head = NULL;
 } // SortedLinkedList
+
 SortedLinkedList::~SortedLinkedList(){
   makeEmpty();
 } // destructor
+
 void SortedLinkedList::makeEmpty(){
   ListNode *temp;
   while(head != NULL){
@@ -17,6 +19,7 @@ void SortedLinkedList::makeEmpty(){
   } // while
   length = 0;
 } // makeEmpty
+
 bool SortedLinkedList::isFull() const{
   ListNode *loc;
   try{
@@ -27,9 +30,11 @@ bool SortedLinkedList::isFull() const{
     return true;
   } // try
 } // isFull
+
 int SortedLinkedList::getLength() const{
   return length;
 } // getLength
+
 void SortedLinkedList::insertItem(ItemType item){
   if(isFull()){ // if list is full
     cout << "can't add new item; list is full" << endl;
@@ -58,6 +63,7 @@ void SortedLinkedList::insertItem(ItemType item){
     length++;
   } // if
 } // insertLinkedList
+
 void SortedLinkedList::deleteItem(ItemType item){
   
 } // deleteItem
@@ -79,6 +85,7 @@ int SortedLinkedList::searchItem(ItemType &item){
   } // while
   return index;
 } // searchItem
+
 ItemType SortedLinkedList::getNextItem(){
   if(currentPos == NULL){ // if at end of list OR new list
     currentPos = head;
@@ -88,8 +95,19 @@ ItemType SortedLinkedList::getNextItem(){
     return currentPos->item;
   } // if
 } // getNextItem
+
 void SortedLinkedList::resetList(){
   currentPos = NULL;
   length = 0;
 } // resetList
 
+std::ostream& operator<<(std::ostream& os, const ItemType& item){
+  return os << item.getValue();
+}
+
+void SortedLinkedList::printList(){
+    ListNode* temp;
+    for (temp = head; temp != NULL; temp = temp = temp->next){
+      cout << temp->item.getValue() << " ";
+    }
+}//printList
