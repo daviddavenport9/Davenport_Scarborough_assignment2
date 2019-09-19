@@ -59,7 +59,7 @@ if (fs.is_open())
    
    }//else if
    else if (command == 'n'){
-    //cout << list.getNextItem();
+    cout << list.getNextItem();
    }//else if
    else if (command == 'r'){
    
