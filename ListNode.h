@@ -2,7 +2,7 @@
 #ifndef LISTNODE_H
 #define LISTNODE_H
 
-class ListNode{
+struct ListNode{
  public:
   ItemType item;
   ListNode* next;
