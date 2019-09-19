@@ -6,6 +6,10 @@ SortedLinkedList::SortedLinkedList(){
     head = NULL;
 } // SortedLinkedList
 
+std::ostream& operator<<(std::ostream& os, const ItemType& item){
+  return os << item.getValue();
+}
+
 SortedLinkedList::~SortedLinkedList(){
   makeEmpty();
 } // destructor
@@ -89,9 +93,17 @@ int SortedLinkedList::searchItem(ItemType &item){
 ItemType SortedLinkedList::getNextItem(){
   if(currentPos == NULL){ // if at end of list OR new list
     currentPos = head;
+    cout << currentPos->item.getValue() << " ";
+    cout << "" << endl;
     return currentPos->item;
   }else{
+    if (currentPos->next == NULL){//end of list
+      cout << "The end of the list is reached" << endl;
+      return currentPos->item;
+    }
     currentPos = currentPos->next;
+    cout << currentPos->item.getValue() << " ";
+    cout << "" << endl;
     return currentPos->item;
   } // if
 } // getNextItem
@@ -101,13 +113,9 @@ void SortedLinkedList::resetList(){
   length = 0;
 } // resetList
 
-std::ostream& operator<<(std::ostream& os, const ItemType& item){
-  return os << item.getValue();
-}
-
 void SortedLinkedList::printList(){
     ListNode* temp;
-    for (temp = head; temp != NULL; temp = temp->next){
+    for (temp = head; temp != NULL; temp= temp->next){
       cout << temp->item.getValue() << " ";
     }
 }//printList
