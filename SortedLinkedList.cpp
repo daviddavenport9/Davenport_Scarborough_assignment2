@@ -73,13 +73,13 @@ void SortedLinkedList::deleteItem(ItemType item){
   tmp->item = head->item;
   ListNode *predLoc = NULL;
   bool moreToSearch = (tmp != NULL);
-  if(tmp->item.compareTo(item) == EQUAL){ // check first item                                                                                                                                       
+  if(tmp->item.compareTo(item) == EQUAL){ // check first item                                                                                              
     cout << "equal first" << endl;
     head = head->next;
     moreToSearch = false;
-  } // if                                                                                                                                                                                           
+  } // if                                                                                                                                                 
   while(moreToSearch){
-    if(tmp->item.compareTo(item) == EQUAL){ // if item is found                                                                                                                                     
+    if(tmp->item.compareTo(item) == EQUAL){ // if item is found                                                                                                
       cout << "equal mid or end" << endl;
       predLoc->next = tmp->next;
       moreToSearch = false;
@@ -87,10 +87,10 @@ void SortedLinkedList::deleteItem(ItemType item){
       predLoc = tmp;
       tmp = tmp->next;
       moreToSearch = (tmp != NULL);
-    } // if                                                                                                                                                                                         
-  } // while                                                                                                                                                                                        
+    } // if                                                                                                                                             
+  } // while                                                                                                                                             
   delete tmp;
-  length--;
+  length--;   
 } // deleteItem        
 
 bool SortedLinkedList::valueExist(ItemType &item){
