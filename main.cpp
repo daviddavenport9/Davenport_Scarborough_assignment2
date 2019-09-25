@@ -53,8 +53,15 @@ if (fs.is_open())
     cout << "" << endl;
    }//if
    else if (command == 'd'){
-   
-   }//else if
+     cout << "Enter a value to delete: ";
+     int value;
+     cin >> value;
+     if(list.valueExist(item)){
+       list.deleteItem(item);
+     }else{
+       cout << "Item not found" << endl;
+     } // if                                                                                                                                                                                        
+   }//else if                         
    else if (command == 's'){
    cout << "Enter a value to search: ";
    int value;
