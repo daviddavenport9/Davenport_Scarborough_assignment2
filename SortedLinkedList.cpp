@@ -74,13 +74,11 @@ void SortedLinkedList::deleteItem(ItemType item){
   ListNode *predLoc = NULL;
   bool moreToSearch = (tmp != NULL);
   if(tmp->item.compareTo(item) == EQUAL){ // check first item                                                                                              
-    cout << "equal first" << endl;
     head = head->next;
     moreToSearch = false;
   } // if                                                                                                                                                 
   while(moreToSearch){
     if(tmp->item.compareTo(item) == EQUAL){ // if item is found                                                                                                
-      cout << "equal mid or end" << endl;
       predLoc->next = tmp->next;
       moreToSearch = false;
     }else if(tmp->item.compareTo(item) == LESS){
@@ -90,8 +88,8 @@ void SortedLinkedList::deleteItem(ItemType item){
     } // if                                                                                                                                             
   } // while                                                                                                                                             
   delete tmp;
-  length--;   
-} // deleteItem        
+  length--;                                                                                                                                                 
+} // deleteItem
 
 bool SortedLinkedList::valueExist(ItemType &item){
   ListNode *temp = head;
@@ -133,10 +131,6 @@ int SortedLinkedList::searchItem(ItemType &item){
 } // searchItem
 
 ItemType SortedLinkedList::getNextItem(){
-   if (length == 0){
-     cout << "List is empty" << endl;
-     return currentPos->item;
-   }
   if(currentPos == NULL){ // assigns current position to head
     currentPos = head;
     cout << currentPos->item.getValue() << " ";
