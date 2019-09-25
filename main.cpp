@@ -53,7 +53,7 @@ if (fs.is_open())
     cout << "" << endl;
    }//if
    else if (command == 'd'){
-    list.printList();
+   list.printList();
    cout << "" << endl;
    cout << "Enter a value to delete: ";
    int value;
@@ -65,8 +65,8 @@ if (fs.is_open())
    cout << "" << endl;
      }else{
        cout << "Item not found" << endl;
-     } // if                                                                                                                                                                                       
-   }//else if                         
+     } // if   
+   }//else if
    else if (command == 's'){
    cout << "Enter a value to search: ";
    int value;
@@ -80,7 +80,11 @@ if (fs.is_open())
      }
    }//else if
    else if (command == 'n'){
+    if (list.getLength() == 0){
+      cout << "List is Empty" << endl;
+    }else{
     list.getNextItem();
+    }
    }//else if
    else if (command == 'r'){
      list.resetList();
