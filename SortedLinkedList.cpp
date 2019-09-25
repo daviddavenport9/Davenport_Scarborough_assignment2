@@ -69,7 +69,27 @@ void SortedLinkedList::insertItem(ItemType item){
 } // insertLinkedList
 
 void SortedLinkedList::deleteItem(ItemType item){
-  
+  ListNode *tmp = head;
+  tmp->item = head->item;
+  ListNode *predLoc = NULL;
+  bool moreToSearch = (tmp != NULL);
+  if(tmp->item.compareTo(item) == EQUAL){ // check first item                                                                                                                                       
+    head = head->next;
+    delete tmp;
+    moreToSearch = false;
+  } // if                                                                                                                                                                                           
+  while(moreToSearch){
+    if(tmp->item.compareTo(item) == EQUAL){ // if item is found                                                                                                                                     
+      predLoc->next = tmp->next;
+      delete tmp;
+      moreToSearch = false;
+    }else if(tmp->item.compareTo(item) == LESS){
+      predLoc = tmp;
+      tmp = tmp->next;
+      moreToSearch = (tmp != NULL);
+    } // if                                                                                                                                                                                         
+  } // while                                                                                                                                                                                        
+  length--;
 } // deleteItem
 
 bool SortedLinkedList::valueExist(ItemType &item){
